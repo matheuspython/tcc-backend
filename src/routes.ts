@@ -1,10 +1,13 @@
-import { Router } from 'express';
-
+import { Router } from "express";
+import { CreateUserController } from "./controllers/User/CreateUserController";
+import { getUsersForLoginController } from "./controllers/User/getUsersForLoginController";
 const router = Router();
 
-router.post('/authenticate');
-router.post('/messages');
-router.get('/messages/last3');
-router.get('/profile');
+router.post("/login", new CreateUserController().handle);
+router.post("/thisAcountExist", new getUsersForLoginController().handle);
+router.post("/createPost");
+router.get("/getFeed");
+router.get("/getProjectsWithSucess");
+router.get("/getProjectsAtual");
 
 export { router };
