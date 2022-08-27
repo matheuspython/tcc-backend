@@ -7,10 +7,19 @@ provider = "sqlite"
   url      = "file:./dev.db"
 }
 
-model user{
+model user {
    id         String @id @default(uuid())
    login      String 
    password   String
    name       String
    image      String
+}
+
+model PostList {
+   id          String @id @default(uuid())
+   tecnologias String
+   host        String
+   descricao   String
+   imgHost     String
+   
 }

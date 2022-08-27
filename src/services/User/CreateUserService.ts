@@ -5,7 +5,7 @@ import { userProps } from "../../types/UserTypes";
 class CreateUserService {
   async execute({ login, password, name, image }: userProps) {
     const user = await prisma.user.create({
-      data: { image, login, name, password },
+      data: { image, login, name, password  },
     });
     const infoWs = {
       id: user.id,

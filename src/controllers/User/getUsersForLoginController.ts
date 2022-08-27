@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { GetUsersForLoginService } from "../../services/User/getUsersForLoginService";
-import { userProps } from "../../types/UserTypes";
+// import { userProps } from "../../types/UserTypes";
 
 export class getUsersForLoginController {
   async handle(request: Request, response: Response) {
@@ -9,8 +9,7 @@ export class getUsersForLoginController {
     const result = await service.execute();
     let resultOfLogin = false;
     let userData = undefined
-    result.forEach((value) => {
-      
+    result.forEach(value => {
       if (value.login === login && value.password === password) {
         resultOfLogin = true;
         userData = value
