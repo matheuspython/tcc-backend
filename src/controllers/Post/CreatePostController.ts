@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { CreatePostService } from "../../../services/Post/CreatePostService";
-import { PostProps } from "../../../types/PostProps"
+import { CreatePostService } from "../../services/Post/CreatePostService"; 
+import { PostProps } from "../../types/PostProps"
 
 class CreatePostController {
     async handle(req: Request, res: Response){

@@ -4,13 +4,35 @@ import { userProps } from "../../types/UserTypes";
 
 class CreateUserController {
   async handle(req: Request, res: Response) {
-    const { login, password, name, image } = req.body;
-
-    const data = { login, password, name, image } as userProps;
+    const {
+      login,
+      password,
+      name,
+      image,
+      description,
+      github,
+      melhoresTecnologias,
+      nascimento,
+      telefone,
+      endereco,
+      email
+    }: userProps = req.body;
 
     const service = new CreateUserService();
 
-    const result = await service.execute(data);
+    const result = await service.execute({
+      login,
+      password,
+      name,
+      image,
+      description,
+      github,
+      melhoresTecnologias,
+      nascimento,
+      telefone,
+      endereco,
+      email
+    });
 
     return res.json(result);
   }

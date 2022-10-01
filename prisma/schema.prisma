@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-provider = "sqlite"
+  provider = "sqlite"
   url      = "file:./dev.db"
 }
 
@@ -11,8 +11,13 @@ model user {
    id         String @id @default(uuid())
    login      String 
    password   String
+   telefone   String
    name       String
    image      String
+   melhoresTecnologias String
+   nascimento String
+   description String
+   github       String
 }
 
 model PostList {
@@ -21,4 +26,15 @@ model PostList {
    host        String
    descricao   String
    imgHost     String
+   // status      String
+   // titulo      String
+   // dataInicio  String
+   // dataFim     String
+   // Messages    Message[]
 }
+
+// model Message {
+//    id          String @id @default(uuid())
+//    Post PostList  @relation(fields: [message], references: [id])
+//    message      String
+// }
