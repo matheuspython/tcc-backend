@@ -18,5 +18,11 @@ CREATE TABLE "PostList" (
     "tecnologias" TEXT NOT NULL,
     "host" TEXT NOT NULL,
     "descricao" TEXT NOT NULL,
-    "imgHost" TEXT NOT NULL
+    "imgHost" TEXT NOT NULL,
+    "titulo" TEXT NOT NULL,
+    "InicioProjeto" DATETIME NOT NULL,
+    "FimProjeto" DATETIME NOT NULL
 );
+
+-- CreateIndex
+CREATE UNIQUE INDEX "user_login_key" ON "user"("login");
