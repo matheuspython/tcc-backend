@@ -16,8 +16,8 @@ const io = new Server(servertHttp, {
   cors: { origin: "*" },
 });
 
-io.on("connection", (socket) =>
-  console.log(`conectado no socket ${socket.id}`)
-);
+io.on("connection", (socket) => {
+  console.log(`conectado no socket ${socket.id}`);
+});
 
 export { servertHttp, io };
